@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Froggy Website – Thorough Test Plan (Netlify + Contact Form)
 
 ## A) What will be tested
@@ -30,3 +31,40 @@ Because Netlify hosting is static (no Express backend), we’ll validate both:
 - Submit the contact form:
   - If it requires backend, confirm it fails gracefully or provides UI message
   - If you connect a Netlify Function later, we can re-test
+=======
+# Frog Studios – Netlify + Contact Form Test Plan
+
+## Static routing
+
+- Visiting `/` should show `frog extra.html`.
+- Directly visiting `/frog%20extra.html` should work.
+- Images, favicon and other static assets should load.
+
+## Footer links
+
+Verify:
+
+- Instagram link
+- WhatsApp link
+- Email `mailto:` link
+- Phone `tel:` link
+
+## Contact form
+
+Because Netlify hosting is static while the Express API is separate, validate both:
+
+- Browser-side form behavior and JavaScript errors.
+- Backend submission behavior against the running Express server.
+
+## Manual production checklist
+
+- Open the production homepage.
+- Confirm the page loads without console errors.
+- Test navigation and responsive layout.
+- Test footer contact links.
+- Submit a valid contact form.
+- Test required-field validation.
+- Verify the Google Sheet receives the submission when configured.
+- Verify optional Gmail notifications when configured.
+- Confirm the form fails gracefully when the backend is unavailable.
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035

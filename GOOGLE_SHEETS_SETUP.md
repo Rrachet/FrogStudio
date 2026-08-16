@@ -54,7 +54,11 @@ function doPost(e) {
 3. Set `Execute as` to your Google account.
 4. Set `Who has access` to `Anyone`.
 5. Click `Deploy`.
+<<<<<<< HEAD
 6. Copy the Web App URL. It should look like:
+=======
+6. Copy the Web App URL.
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
 
 ```text
 https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
@@ -78,7 +82,11 @@ set GOOGLE_SHEET_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
 node server.js
 ```
 
+<<<<<<< HEAD
 Or use `run-server.ps1` / `run-server.bat`; the launcher will ask for the URL if it is missing.
+=======
+Or use the supplied launcher scripts.
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
 
 ## 5. Test
 
@@ -87,4 +95,8 @@ Or use `run-server.ps1` / `run-server.bat`; the launcher will ask for the URL if
 3. Submit the contact form.
 4. Check the Google Sheet for the new row.
 
+<<<<<<< HEAD
 Email notifications are optional. Set `EMAIL_PASSWORD` only if you also want Gmail notifications.
+=======
+Email notifications are optional. Set `EMAIL_PASSWORD` only if you also want Gmail notifications.
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035

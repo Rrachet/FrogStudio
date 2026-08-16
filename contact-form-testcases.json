@@ -42,6 +42,12 @@
     "phone": "+91 9330066168",
     "service": "Brand Strategy",
     "budget": "",
+<<<<<<< HEAD
     "message": "Invalid because email format is wrong (server may still accept; verify behavior)."
   }
 ]
+=======
+    "message": "Invalid because email format is wrong."
+  }
+]
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035

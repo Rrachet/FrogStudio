@@ -1,2 +1,15 @@
+<<<<<<< HEAD
 .vercel
 .env*
+=======
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035

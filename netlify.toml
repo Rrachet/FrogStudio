@@ -3,4 +3,8 @@
 from = "/"
 to = "/frog%20extra.html"
 status = 302
+<<<<<<< HEAD
 force = true
+=======
+force = true
+>>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
