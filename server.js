@@ -54,10 +54,7 @@ function requestJson(url, payload, method = 'POST', redirectsLeft = 5) {
       return;
     }
 
-<<<<<<< HEAD
     // Many Google Apps Script webhooks accept JSON, but some return plain text.
-=======
->>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
     const body = method === 'POST' ? JSON.stringify(payload) : '';
     const request = https.request(url, {
       method,
@@ -87,10 +84,7 @@ function requestJson(url, payload, method = 'POST', redirectsLeft = 5) {
           return;
         }
 
-<<<<<<< HEAD
         // Try parsing JSON, but fall back to a success object if the response is plain text.
-=======
->>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
         if (!responseBody) return resolve({ success: true });
 
         try {
@@ -107,10 +101,7 @@ function requestJson(url, payload, method = 'POST', redirectsLeft = 5) {
   });
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
 function postJson(url, payload) {
   return requestJson(url, payload);
 }
@@ -254,8 +245,4 @@ app.listen(PORT, () => {
   console.log(`Frog Studios server running on http://localhost:${PORT}`);
   console.log(`Google Sheet capture: ${GOOGLE_SHEET_URL ? 'enabled' : 'disabled'}`);
   console.log(`Email notifications: ${transporter ? 'enabled' : 'disabled'}`);
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
