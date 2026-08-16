@@ -1,11 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "frog extra.html", "use": "@vercel/static" }
+    { "src": "main.html", "use": "@vercel/static" }
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/", "dest": "/frog%20extra.html" },
-    { "src": "/(.*)", "dest": "/frog%20extra.html" }
+    { "src": "/", "dest": "/main.html" },
+        { "src": "/(.*)", "dest": "/main.html" }
   ]
 }
