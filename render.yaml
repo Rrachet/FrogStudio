@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: frog-studios
+    env: node
+    plan: starter
+    region: oregon
+    repo: https://github.com/Rrachet/FrogStudio.git
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: GOOGLE_SHEET_URL
+        value: ""
+      - key: EMAIL_USER
+        value: ""
+      - key: EMAIL_PASSWORD
+        value: ""
+      - key: EMAIL_TO
+        value: ""
