@@ -1,15 +1,20 @@
-<<<<<<< HEAD
-.vercel
-.env*
-=======
 node_modules/
 .env
 .env.*
 !.env.example
+.vercel/
+.netlify/
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.log
->>>>>>> 3236dc20a2e50f82cd11b4f120b0b284a37d1035
+*.tmp
+*.swp
+coverage/
+dist/
+build/
