@@ -2205,7 +2205,8 @@ async function handleSubmit(event) {
   button.textContent = "Sending...";
 
   try {
-    const response = await fetch("/api/submit-form", {
+    const API_BASE = window.__API_BASE__ || (window.location.hostname === 'localhost' ? '' : 'https://frog-studios.onrender.com');
+    const response = await fetch((API_BASE ? API_BASE : '') + '/api/submit-form', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
