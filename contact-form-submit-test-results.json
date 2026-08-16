@@ -1,0 +1,37 @@
+﻿[
+    {
+        "name":  "Test User",
+        "email":  "test.user@example.com",
+        "ok":  false,
+        "statusCode":  500,
+        "response":  "The remote server returned an error: (500) Internal Server Error."
+    },
+    {
+        "name":  "Edge Case Missing Phone",
+        "email":  "edge.phone.missing@example.com",
+        "ok":  false,
+        "statusCode":  500,
+        "response":  "The remote server returned an error: (500) Internal Server Error."
+    },
+    {
+        "name":  "",
+        "email":  "invalid.missing.name@example.com",
+        "ok":  false,
+        "statusCode":  400,
+        "response":  "The remote server returned an error: (400) Bad Request."
+    },
+    {
+        "name":  "Invalid Missing Service",
+        "email":  "invalid.missing.service@example.com",
+        "ok":  false,
+        "statusCode":  400,
+        "response":  "The remote server returned an error: (400) Bad Request."
+    },
+    {
+        "name":  "Invalid Email Format",
+        "email":  "not-an-email",
+        "ok":  false,
+        "statusCode":  500,
+        "response":  "The remote server returned an error: (500) Internal Server Error."
+    }
+]

@@ -1,0 +1,6 @@
+# Serve frog extra.html as the default homepage
+[[redirects]]
+from = "/"
+to = "/frog%20extra.html"
+status = 302
+force = true

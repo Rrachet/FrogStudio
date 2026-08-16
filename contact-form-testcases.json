@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Test User",
+    "company": "Frog Studios",
+    "email": "test.user@example.com",
+    "phone": "+91 9330066168",
+    "service": "Branding & Design",
+    "budget": "₹50k - ₹1L",
+    "message": "This is a normal valid submission test."
+  },
+  {
+    "name": "Edge Case Missing Phone",
+    "company": "",
+    "email": "edge.phone.missing@example.com",
+    "phone": "",
+    "service": "Web Development",
+    "budget": "",
+    "message": "Valid except phone is missing."
+  },
+  {
+    "name": "",
+    "company": "Frog Studios",
+    "email": "invalid.missing.name@example.com",
+    "phone": "+91 9330066168",
+    "service": "Video & Content",
+    "budget": "₹1L - ₹3L",
+    "message": "Invalid because name is empty."
+  },
+  {
+    "name": "Invalid Missing Service",
+    "company": "Frog Studios",
+    "email": "invalid.missing.service@example.com",
+    "phone": "+91 9330066168",
+    "service": "",
+    "budget": "₹1L - ₹3L",
+    "message": "Invalid because service is empty."
+  },
+  {
+    "name": "Invalid Email Format",
+    "company": "Frog Studios",
+    "email": "not-an-email",
+    "phone": "+91 9330066168",
+    "service": "Brand Strategy",
+    "budget": "",
+    "message": "Invalid because email format is wrong (server may still accept; verify behavior)."
+  }
+]
