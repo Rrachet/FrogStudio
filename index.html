@@ -2,79 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Frog Studios is a Hyderabad creative studio building bold identities, digital experiences and video content that people remember.">
   <title>Frog Studios — Brands that make the leap</title>
-  <meta name="description" content="Frog Studios is a Hyderabad creative studio building brands, digital experiences and video content that people remember.">
   <link rel="icon" href="images/FINAL__1.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#080808;--panel:#111;--panel2:#161616;--ink:#f5f3ee;--muted:#8d8a84;--line:#24231f;--acid:#f7941d;--acid2:#ffad35;--max:1380px}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.22;background-image:radial-gradient(rgba(255,255,255,.18) .5px,transparent .5px);background-size:5px 5px;mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent)}
+    :root{--bg:#080808;--panel:#111;--ink:#f5f3ee;--muted:#8d8a84;--line:#24231f;--acid:#f7941d;--acid2:#ffad35;--max:1380px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.16;background-image:radial-gradient(rgba(255,255,255,.16) .5px,transparent .5px);background-size:5px 5px;mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent)}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+    img,video{max-width:100%}
     .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.mono{font:500 11px/1 DM Mono,monospace;letter-spacing:.12em;text-transform:uppercase}.accent{color:var(--acid)}
-    nav{position:fixed;z-index:100;top:0;left:0;right:0;height:78px;border-bottom:1px solid transparent;transition:.3s;background:linear-gradient(to bottom,rgba(8,8,8,.92),transparent)}nav.scrolled{height:68px;background:rgba(8,8,8,.86);backdrop-filter:blur(18px);border-color:var(--line)}
-    .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{width:142px;height:auto;display:block}.nav-links{display:flex;align-items:center;gap:28px}.nav-links a{font-size:12px;font-weight:700;color:#bbb8b1;transition:.2s}.nav-links a:hover{color:#fff}.nav-cta{padding:11px 17px;border:1px solid var(--acid);color:var(--acid);border-radius:999px}.nav-cta:hover{background:var(--acid);color:#080808}.menu{display:none;border:0;background:none;color:#fff;font-size:24px}
+    nav{position:fixed;z-index:100;top:0;left:0;right:0;height:78px;border-bottom:1px solid transparent;transition:.3s;background:linear-gradient(to bottom,rgba(8,8,8,.94),transparent)}
+    nav.scrolled{height:68px;background:rgba(8,8,8,.86);backdrop-filter:blur(18px);border-color:var(--line)}
+    .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{width:142px;height:auto;display:block}.nav-links{display:flex;align-items:center;gap:28px}.nav-links a{font-size:12px;font-weight:700;color:#bbb8b1;transition:.2s}.nav-links a:hover{color:#fff}.nav-cta{padding:11px 17px;border:1px solid var(--acid);color:var(--acid);border-radius:999px}.nav-cta:hover{background:var(--acid);color:#080808}.menu{display:none;border:0;background:none;color:#fff;font-size:24px;cursor:pointer}
     .hero{min-height:100svh;display:flex;align-items:flex-end;padding:150px 0 70px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:800px;height:800px;right:-280px;top:5%;background:radial-gradient(circle,rgba(247,148,29,.15),transparent 64%);filter:blur(20px)}.hero-grid{position:absolute;inset:0;opacity:.35;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
     .hero-content{position:relative;z-index:1;max-width:1050px}.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:26px;color:var(--acid)}.eyebrow:before{content:"";width:34px;height:1px;background:var(--acid)}h1{font-size:clamp(64px,10vw,156px);line-height:.84;letter-spacing:-.065em;font-weight:800;max-width:1100px}h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px #77736c}.hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-top:48px;max-width:1050px}.hero-copy{max-width:540px;color:#a8a49c;font-size:16px;line-height:1.75}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 19px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:800;transition:.25s}.btn-primary{background:var(--acid);color:#0a0a0a;border-color:var(--acid)}.btn-primary:hover{background:var(--acid2);transform:translateY(-2px);box-shadow:0 12px 35px rgba(247,148,29,.18)}.btn-ghost:hover{border-color:#777;color:#fff}.scroll{position:absolute;right:0;bottom:70px;writing-mode:vertical-rl;color:#696660}
     .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:#0d0d0d}.ticker-track{display:flex;width:max-content;animation:slide 24s linear infinite}.ticker span{padding:17px 28px;color:#aaa69e;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.ticker b{color:var(--acid);font-size:8px}@keyframes slide{to{transform:translateX(-50%)}}
     section{padding:125px 0}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:55px}.section-kicker{color:var(--acid);margin-bottom:14px}.section-title{font-size:clamp(44px,6vw,82px);line-height:.9;letter-spacing:-.055em;font-weight:800}.section-note{max-width:430px;color:#85827b;line-height:1.7;font-size:14px}
     .services{background:#0d0d0d}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.service{background:#0d0d0d;padding:34px;min-height:320px;position:relative;transition:.3s}.service:hover{background:#131313}.service-number{color:#55514b}.service h3{font-size:25px;letter-spacing:-.03em;margin:75px 0 13px}.service p{color:#85827b;font-size:14px;line-height:1.7;max-width:330px}.service-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.tag{border:1px solid #2c2a26;border-radius:99px;padding:6px 9px;color:#77736c;font:10px DM Mono,monospace;text-transform:uppercase}
     .work-intro{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.filters{display:flex;gap:7px}.filter{border:1px solid var(--line);background:none;color:#77736c;border-radius:999px;padding:9px 13px;cursor:pointer;font:11px DM Mono,monospace;text-transform:uppercase}.filter.active,.filter:hover{border-color:var(--acid);color:var(--acid)}
-    .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}.work-card{grid-column:span 4;position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;border:1px solid var(--line);cursor:pointer}.work-card.wide{grid-column:span 8;aspect-ratio:16/9}.work-card img,.work-card video{width:100%;height:100%;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1);background:#151515}.work-card:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88),transparent 55%);pointer-events:none}.work-card:hover img,.work-card:hover video{transform:scale(1.035)}.work-meta{position:absolute;z-index:2;left:20px;right:20px;bottom:18px}.work-type{color:var(--acid);margin-bottom:7px}.work-name{font-size:23px;font-weight:800;letter-spacing:-.04em}.work-sub{color:#aaa69e;font-size:12px;margin-top:4px}.play{position:absolute;z-index:3;right:18px;top:18px;width:42px;height:42px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.35);backdrop-filter:blur(8px)}
+    .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}.work-card{grid-column:span 4;position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;border:1px solid var(--line);cursor:pointer;isolation:isolate}.work-card.wide{grid-column:span 8;aspect-ratio:16/9}.work-card img,.work-card video{width:100%;height:100%;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1);background:#151515}.work-card:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88),transparent 55%);pointer-events:none;z-index:1}.work-card:hover img,.work-card:hover video{transform:scale(1.035)}.work-meta{position:absolute;z-index:2;left:20px;right:20px;bottom:18px}.work-type{color:var(--acid);margin-bottom:7px}.work-name{font-size:23px;font-weight:800;letter-spacing:-.04em}.work-sub{color:#aaa69e;font-size:12px;margin-top:4px}.play{position:absolute;z-index:2;right:18px;top:18px;width:42px;height:42px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);font-size:12px}
     .about{background:#0d0d0d}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}.about-visual{position:relative;min-height:600px;border:1px solid var(--line);overflow:hidden;background:#111}.about-visual:before{content:"FROG";position:absolute;left:-20px;bottom:-30px;font-size:180px;font-weight:800;letter-spacing:-.09em;color:#1b1a17}.about-visual img{position:absolute;width:58%;max-width:380px;left:50%;top:50%;transform:translate(-50%,-50%);filter:drop-shadow(0 30px 50px rgba(247,148,29,.22))}.stat{position:absolute;background:#0a0a0a;border:1px solid #2a2824;padding:18px 20px}.stat.one{left:18px;top:18px}.stat.two{right:18px;bottom:18px}.stat strong{display:block;color:var(--acid);font-size:34px;letter-spacing:-.05em}.stat span{color:#77736c;font:10px DM Mono,monospace;text-transform:uppercase}.about-copy p{color:#929087;line-height:1.8;font-size:15px;margin:20px 0}.principles{margin-top:35px;border-top:1px solid var(--line)}.principle{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}.principle b{color:var(--acid);font:11px DM Mono,monospace}.principle h4{font-size:15px;margin-bottom:5px}.principle p{font-size:12px;margin:0;color:#706d67}
     .contact{padding-bottom:90px}.contact-box{border:1px solid #302d28;background:linear-gradient(135deg,#12110f,#0c0c0c);padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact-box h2{font-size:clamp(48px,6vw,86px);line-height:.88;letter-spacing:-.06em}.contact-box p{color:#85827b;line-height:1.7;margin-top:22px;max-width:450px}.contact-details{margin-top:35px;display:grid;gap:10px}.contact-details a{color:#d8d4cd;font-size:14px}.contact-details a:hover{color:var(--acid)}form{display:grid;gap:12px}input,select,textarea{width:100%;border:1px solid #2a2824;background:#0a0a0a;color:#eee;padding:15px 16px;outline:none;border-radius:2px}input:focus,select:focus,textarea:focus{border-color:#69635a}textarea{min-height:130px;resize:vertical}form button{border:0;cursor:pointer;padding:16px;background:var(--acid);color:#090909;font-weight:800}.form-status{min-height:20px;color:#8f8b84;font-size:12px}
     footer{border-top:1px solid var(--line);padding:30px 0 45px}.footer{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer img{width:130px}.footer p{color:#5f5c56;font-size:11px}.footer-links{display:flex;gap:20px;color:#77736c;font-size:11px}.footer-links a:hover{color:#fff}
-    .modal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:30px}.modal.open{display:flex}.modal-inner{width:min(1100px,100%);max-height:90vh;position:relative}.modal-media{width:100%;max-height:82vh;object-fit:contain;background:#050505}.close{position:absolute;right:-5px;top:-48px;border:1px solid #444;background:#111;color:#fff;border-radius:50%;width:36px;height:36px;cursor:pointer}
+    .modal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:30px}.modal.open{display:flex}.modal-inner{width:min(1100px,100%);max-height:90vh;position:relative}.modal-media{width:100%;max-height:82vh;object-fit:contain;background:#050505}.close{position:absolute;right:-5px;top:-48px;border:1px solid #444;background:#111;color:#fff;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:22px}
     .reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
-    @media(max-width:900px){.wrap{width:min(100% - 32px,var(--max))}.nav-links{display:none}.menu{display:block}.hero{padding-top:130px}.hero-bottom{display:block}.hero-actions{margin-top:25px}.scroll{display:none}.service-grid{grid-template-columns:1fr}.service{min-height:250px}.work-grid{grid-template-columns:1fr 1fr}.work-card,.work-card.wide{grid-column:span 1;aspect-ratio:4/5}.about-grid,.contact-box{grid-template-columns:1fr;gap:45px}.about-visual{min-height:430px}.contact-box{padding:35px}.section-head,.work-intro{display:block}.section-note{margin-top:18px}.filters{margin-top:25px;overflow:auto}.footer{flex-direction:column;align-items:flex-start}}
-    @media(max-width:560px){h1{font-size:60px}.work-grid{grid-template-columns:1fr}.work-card,.work-card.wide{aspect-ratio:4/5}.about-visual{min-height:330px}.contact-box h2{font-size:52px}.hero-copy{font-size:14px}.hero{padding-bottom:50px}section{padding:85px 0}}
+    @media(max-width:900px){.wrap{width:min(100% - 32px,var(--max))}.nav-links{display:none}.menu{display:block}.hero{padding-top:130px}.hero-bottom{display:block}.hero-actions{margin-top:25px}.scroll{display:none}.service-grid{grid-template-columns:1fr}.service{min-height:250px}.work-grid{grid-template-columns:1fr 1fr}.work-card,.work-card.wide{grid-column:span 1;aspect-ratio:4/5}.about-grid,.contact-box{grid-template-columns:1fr;gap:45px}.about-visual{min-height:430px}.contact-box{padding:35px}.section-head,.work-intro{display:block}.section-note{margin-top:18px}.filters{margin-top:25px;overflow:auto;padding-bottom:3px}.footer{flex-direction:column;align-items:flex-start}}
+    @media(max-width:560px){h1{font-size:60px}.work-grid{grid-template-columns:1fr}.work-card,.work-card.wide{aspect-ratio:4/5}.about-visual{min-height:330px}.contact-box h2{font-size:52px}.hero-copy{font-size:14px}.hero{padding-bottom:50px}section{padding:85px 0}.contact-box{padding:24px}.brand img{width:120px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <nav id="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><img src="images/FINAL__1.png" alt="Frog Studios"></a><div class="nav-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact" class="nav-cta">Start a project ↗</a></div><button class="menu" id="menu" aria-label="Open menu">☰</button></div></nav>
+  <nav id="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><img src="images/FINAL__1.png" alt="Frog Studios"></a><div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact" class="nav-cta">Start a project ↗</a></div><button class="menu" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button></div></nav>
 
   <main id="top">
     <section class="hero"><div class="hero-grid"></div><div class="wrap"><div class="hero-content"><div class="eyebrow mono">Hyderabad · Creative Studio</div><h1>Make them<br><em>remember</em> you.</h1><div class="hero-bottom"><p class="hero-copy">Frog Studios builds bold identities, digital experiences and video content for brands ready to stop blending in.</p><div class="hero-actions"><a class="btn btn-primary" href="#work">Explore the work ↓</a><a class="btn btn-ghost" href="#contact">Let's talk ↗</a></div></div></div></div><div class="scroll mono">Scroll to explore ↓</div></section>
-    <div class="ticker"><div class="ticker-track"><span>Brand Strategy <b>●</b></span><span>Identity <b>●</b></span><span>Web Development <b>●</b></span><span>Video Production <b>●</b></span><span>Social Content <b>●</b></span><span>UI/UX <b>●</b></span><span>Brand Strategy <b>●</b></span><span>Identity <b>●</b></span><span>Web Development <b>●</b></span><span>Video Production <b>●</b></span><span>Social Content <b>●</b></span><span>UI/UX <b>●</b></span></div></div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Brand Strategy <b>●</b></span><span>Identity <b>●</b></span><span>Web Development <b>●</b></span><span>Video Production <b>●</b></span><span>Social Content <b>●</b></span><span>UI/UX <b>●</b></span><span>Brand Strategy <b>●</b></span><span>Identity <b>●</b></span><span>Web Development <b>●</b></span><span>Video Production <b>●</b></span><span>Social Content <b>●</b></span><span>UI/UX <b>●</b></span></div></div>
 
     <section id="services" class="services"><div class="wrap"><div class="section-head reveal"><div><div class="section-kicker mono">01 / Capabilities</div><h2 class="section-title">One studio.<br><span class="accent">Full stack.</span></h2></div><p class="section-note">Strategy, design, engineering and production under one roof. Fewer handoffs. Better work. Faster launches.</p></div><div class="service-grid reveal"><article class="service"><div class="service-number mono">01</div><h3>Brand Systems</h3><p>Positioning and visual identities that give a business a distinct point of view and a system it can actually use.</p><div class="service-tags"><span class="tag">Strategy</span><span class="tag">Identity</span><span class="tag">Guidelines</span></div></article><article class="service"><div class="service-number mono">02</div><h3>Digital Products</h3><p>Conversion-first websites and full-stack experiences that feel premium without getting in the user's way.</p><div class="service-tags"><span class="tag">UX/UI</span><span class="tag">Web</span><span class="tag">MERN</span></div></article><article class="service"><div class="service-number mono">03</div><h3>Motion & Content</h3><p>Films, reels and campaign content engineered to work on real feeds — not just look good in a presentation.</p><div class="service-tags"><span class="tag">Reels</span><span class="tag">Production</span><span class="tag">Social</span></div></article></div></div></section>
 
-    <section id="work"><div class="wrap"><div class="work-intro reveal"><div><div class="section-kicker mono">02 / Selected work</div><h2 class="section-title">Proof, not<br><span class="accent">promises.</span></h2></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="static">Static</button><button class="filter" data-filter="video">Video</button></div></div><div class="work-grid reveal" id="workGrid">
-      <article class="work-card wide" data-kind="video" data-title="AI / Launch Film" data-media="video" data-src="images/AI.mp4"><video muted loop playsinline preload="none" data-src="images/AI.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Launch</div><div class="work-name">AI — Launch Film</div><div class="work-sub">Motion-led campaign content</div></div></article>
-      <article class="work-card" data-kind="static" data-title="Talent / Campaign" data-media="image" data-src="images/tal.jpeg"><img loading="lazy" src="images/tal.jpeg" alt="Talent campaign visual"><div class="work-meta"><div class="work-type mono">Static / Campaign</div><div class="work-name">Talent</div><div class="work-sub">Photography & visual direction</div></div></article>
-      <article class="work-card" data-kind="video" data-title="Lenovo / Story" data-media="video" data-src="images/KELLY%20FUNG%20-%20LENOVO.mp4"><video muted loop playsinline preload="none" data-src="images/KELLY%20FUNG%20-%20LENOVO.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Brand</div><div class="work-name">Lenovo</div><div class="work-sub">Brand storytelling</div></div></article>
-      <article class="work-card" data-kind="video" data-title="Masquerade / Film" data-media="video" data-src="images/MASQUERADE.mp4"><video muted loop playsinline preload="none" data-src="images/MASQUERADE.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Film</div><div class="work-name">Masquerade</div><div class="work-sub">Concept & production</div></div></article>
-      <article class="work-card wide" data-kind="video" data-title="Thrii / Product Film" data-media="video" data-src="images/Thrii.mp4"><video muted loop playsinline preload="none" data-src="images/Thrii.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Product</div><div class="work-name">Thrii</div><div class="work-sub">Product storytelling & motion</div></div></article>
-      <article class="work-card" data-kind="static" data-title="Talent / Visual 02" data-media="image" data-src="images/tal2.jpeg"><img loading="lazy" src="images/tal2.jpeg" alt="Talent visual"><div class="work-meta"><div class="work-type mono">Static / Editorial</div><div class="work-name">Talent 02</div><div class="work-sub">Campaign still</div></div></article>
-      <article class="work-card" data-kind="video" data-title="Recruitment / Film" data-media="video" data-src="images/Recruitment.mp4"><video muted loop playsinline preload="none" data-src="images/Recruitment.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Corporate</div><div class="work-name">Recruitment</div><div class="work-sub">Corporate storytelling</div></div></article>
-      <article class="work-card" data-kind="video" data-title="Signal / Campaign" data-media="video" data-src="images/Signal.mp4"><video muted loop playsinline preload="none" data-src="images/Signal.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Campaign</div><div class="work-name">Signal</div><div class="work-sub">Launch motion</div></div></article>
-      <article class="work-card" data-kind="video" data-title="Rina Hindocha / Shoot" data-media="video" data-src="images/RinaHindochashoot.mp4"><video muted loop playsinline preload="none" data-src="images/RinaHindochashoot.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Shoot</div><div class="work-name">Rina Hindocha</div><div class="work-sub">Production coverage</div></div></article>
-      <article class="work-card" data-kind="video" data-title="SRI CHARAN / STRIBE" data-media="video" data-src="images/SRI%20CHARAN%20-%20STRIBE.mp4"><video muted loop playsinline preload="none" data-src="images/SRI%20CHARAN%20-%20STRIBE.mp4"></video><div class="play">▶</div><div class="work-meta"><div class="work-type mono">Video / Brand</div><div class="work-name">SRI CHARAN — STRIBE</div><div class="work-sub">Creator campaign</div></div></article>
-      <article class="work-card" data-kind="static" data-title="Creative Direction / 01" data-media="image" data-src="images/WOI%20(26).png"><img loading="lazy" src="images/WOI%20(26).png" alt="Creative direction visual"><div class="work-meta"><div class="work-type mono">Static / Direction</div><div class="work-name">Creative Direction</div><div class="work-sub">Visual identity asset</div></div></article>
-      <article class="work-card" data-kind="static" data-title="Creative Direction / 02" data-media="image" data-src="images/WOI%20(28).png"><img loading="lazy" src="images/WOI%20(28).png" alt="Creative direction visual 2"><div class="work-meta"><div class="work-type mono">Static / Direction</div><div class="work-name">Narrative Frames</div><div class="work-sub">Campaign still</div></div></article>
+    <section id="work"><div class="wrap"><div class="work-intro reveal"><div><div class="section-kicker mono">02 / Selected work</div><h2 class="section-title">Proof, not<br><span class="accent">promises.</span></h2></div><div class="filters" role="group" aria-label="Portfolio filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="static">Static</button><button class="filter" data-filter="video">Video</button></div></div><div class="work-grid reveal" id="workGrid">
+      <article class="work-card wide" data-kind="video" data-title="AI / Launch Film" data-media="video" data-src="images/AI.mp4" tabindex="0" role="button" aria-label="Open AI launch film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/AI.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Launch</div><div class="work-name">AI — Launch Film</div><div class="work-sub">Motion-led campaign content</div></div></article>
+      <article class="work-card" data-kind="static" data-title="Frog Studios / Brand System" data-media="image" data-src="images/FINAL.png" tabindex="0" role="button" aria-label="Open Frog Studios brand visual"><img loading="lazy" src="images/FINAL.png" alt="Frog Studios brand visual"><div class="work-meta"><div class="work-type mono">Static / Brand</div><div class="work-name">Frog Studios</div><div class="work-sub">Brand system & visual direction</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Lenovo / Story" data-media="video" data-src="images/KELLY%20FUNG%20-%20LENOVO.mp4" tabindex="0" role="button" aria-label="Open Lenovo brand story"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/KELLY%20FUNG%20-%20LENOVO.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Brand</div><div class="work-name">Lenovo</div><div class="work-sub">Brand storytelling</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Masquerade / Film" data-media="video" data-src="images/MASQUERADE.mp4" tabindex="0" role="button" aria-label="Open Masquerade film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/MASQUERADE.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Film</div><div class="work-name">Masquerade</div><div class="work-sub">Concept & production</div></div></article>
+      <article class="work-card wide" data-kind="video" data-title="Thrii / Product Film" data-media="video" data-src="images/Thrii.mp4" tabindex="0" role="button" aria-label="Open Thrii product film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/Thrii.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Product</div><div class="work-name">Thrii</div><div class="work-sub">Product storytelling & motion</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Recruitment / Film" data-media="video" data-src="images/Recruitment.mp4" tabindex="0" role="button" aria-label="Open Recruitment film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/Recruitment.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Corporate</div><div class="work-name">Recruitment</div><div class="work-sub">Corporate storytelling</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Signal / Campaign" data-media="video" data-src="images/Signal.mp4" tabindex="0" role="button" aria-label="Open Signal campaign"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/Signal.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Campaign</div><div class="work-name">Signal</div><div class="work-sub">Launch motion</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Rina Hindocha / Shoot" data-media="video" data-src="images/RinaHindochashoot.mp4" tabindex="0" role="button" aria-label="Open Rina Hindocha shoot"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/RinaHindochashoot.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Shoot</div><div class="work-name">Rina Hindocha</div><div class="work-sub">Production coverage</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Sri Charan / STRIBE" data-media="video" data-src="images/SRI%20CHARAN%20-%20STRIBE.mp4" tabindex="0" role="button" aria-label="Open Sri Charan STRIBE campaign"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/SRI%20CHARAN%20-%20STRIBE.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Brand</div><div class="work-name">SRI CHARAN — STRIBE</div><div class="work-sub">Creator campaign</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Arya Pattnaik / Film" data-media="video" data-src="images/ARYA%20PATTNAIK.mp4" tabindex="0" role="button" aria-label="Open Arya Pattnaik film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/ARYA%20PATTNAIK.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Profile</div><div class="work-name">Arya Pattnaik</div><div class="work-sub">Profile film</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Jyoti Bala / Film" data-media="video" data-src="images/Jyoti%20bala.mp4" tabindex="0" role="button" aria-label="Open Jyoti Bala film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/Jyoti%20bala.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Profile</div><div class="work-name">Jyoti Bala</div><div class="work-sub">Profile storytelling</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Reveal / Motion" data-media="video" data-src="images/Reveal.mp4" tabindex="0" role="button" aria-label="Open Reveal motion"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/Reveal.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Motion</div><div class="work-name">Reveal</div><div class="work-sub">Motion direction</div></div></article>
+      <article class="work-card" data-kind="video" data-title="Kelly Fung / Lenovo" data-media="video" data-src="images/KELLY%20FUNG%20-%20LENOVO.mp4" tabindex="0" role="button" aria-label="Open Kelly Fung Lenovo film"><video muted loop playsinline preload="metadata" poster="images/FINAL.png" data-src="images/KELLY%20FUNG%20-%20LENOVO.mp4"></video><div class="play" aria-hidden="true">▶</div><div class="work-meta"><div class="work-type mono">Video / Brand</div><div class="work-name">Kelly Fung — Lenovo</div><div class="work-sub">Brand storytelling</div></div></article>
+      <article class="work-card" data-kind="static" data-title="World of India / 26" data-media="image" data-src="images/WOI%20(26).png" tabindex="0" role="button" aria-label="Open World of India visual 26"><img loading="lazy" src="images/WOI%20(26).png" alt="World of India visual 26"><div class="work-meta"><div class="work-type mono">Static / Direction</div><div class="work-name">World of India 26</div><div class="work-sub">Campaign visual</div></div></article>
+      <article class="work-card" data-kind="static" data-title="World of India / 28" data-media="image" data-src="images/WOI%20(28).png" tabindex="0" role="button" aria-label="Open World of India visual 28"><img loading="lazy" src="images/WOI%20(28).png" alt="World of India visual 28"><div class="work-meta"><div class="work-type mono">Static / Direction</div><div class="work-name">World of India 28</div><div class="work-sub">Campaign visual</div></div></article>
+      <article class="work-card" data-kind="static" data-title="World of India / 30" data-media="image" data-src="images/WOI%20(30).png" tabindex="0" role="button" aria-label="Open World of India visual 30"><img loading="lazy" src="images/WOI%20(30).png" alt="World of India visual 30"><div class="work-meta"><div class="work-type mono">Static / Direction</div><div class="work-name">World of India 30</div><div class="work-sub">Campaign visual</div></div></article>
     </div></div></section>
 
     <section id="about" class="about"><div class="wrap about-grid"><div class="about-visual reveal"><img src="images/FINAL.png" alt="Frog Studios logo"><div class="stat one"><strong>2023</strong><span>Founded / Hyderabad</span></div><div class="stat two"><strong>∞</strong><span>Room to leap</span></div></div><div class="about-copy reveal"><div class="section-kicker mono">03 / The studio</div><h2 class="section-title">Small team.<br><span class="accent">Big swing.</span></h2><p>Frog Studios exists for founders who know their product is good but know the presentation needs to catch up.</p><p>We combine creative direction with actual engineering — so the brand, website and content feel like one idea instead of three vendors stitched together.</p><div class="principles"><div class="principle"><b>01</b><div><h4>Clarity over decoration.</h4><p>Every visual has a job. Every interaction earns its place.</p></div></div><div class="principle"><b>02</b><div><h4>Build for the real world.</h4><p>Fast load times, responsive layouts and systems your team can maintain.</p></div></div><div class="principle"><b>03</b><div><h4>Make the work memorable.</h4><p>Distinctive enough to be recognised. Useful enough to perform.</p></div></div></div></div></div></section>
 
-    <section id="contact" class="contact"><div class="wrap"><div class="contact-box reveal"><div><div class="section-kicker mono">04 / Start something</div><h2>Got a brand<br><span class="accent">worth betting on?</span></h2><p>Tell us what you're building, what is stuck, and where you want to go. We'll take it from there.</p><div class="contact-details"><a href="mailto:frogstudiozz@gmail.com">frogstudiozz@gmail.com ↗</a><a href="https://forms.gle/S4iCDH6hRb2fjjYeA" target="_blank" rel="noreferrer">Book a call ↗</a></div></div><form id="leadForm"><input name="name" placeholder="Your name *" required><input name="company" placeholder="Company / brand"><input type="email" name="email" placeholder="Email *" required><input name="phone" placeholder="Phone"><select name="service" required><option value="">What do you need? *</option><option>Branding & Identity</option><option>Website / Web App</option><option>Video & Content</option><option>Full creative partnership</option></select><textarea name="message" placeholder="Tell us a little about the project..."></textarea><button type="submit">Send the brief ↗</button><div class="form-status" id="formStatus"></div></form></div></div></section>
+    <section id="contact" class="contact"><div class="wrap"><div class="contact-box reveal"><div><div class="section-kicker mono">04 / Start something</div><h2>Got a brand<br><span class="accent">worth betting on?</span></h2><p>Tell us what you're building, what is stuck, and where you want to go. We'll take it from there.</p><div class="contact-details"><a href="mailto:frogstudiozz@gmail.com">frogstudiozz@gmail.com ↗</a><a href="https://forms.gle/S4iCDH6hRb2fjjYeA" target="_blank" rel="noreferrer">Book a call ↗</a></div></div><form id="leadForm"><input name="name" placeholder="Your name *" autocomplete="name" required><input name="company" placeholder="Company / brand" autocomplete="organization"><input type="email" name="email" placeholder="Email *" autocomplete="email" required><input name="phone" placeholder="Phone" autocomplete="tel"><select name="service" required><option value="">What do you need? *</option><option>Branding & Identity</option><option>Website / Web App</option><option>Video & Content</option><option>Full creative partnership</option></select><textarea name="message" placeholder="Tell us a little about the project..."></textarea><button type="submit">Send the brief ↗</button><div class="form-status" id="formStatus" aria-live="polite"></div></form></div></div></section>
   </main>
 
   <footer><div class="wrap footer"><img src="images/FINAL__1.png" alt="Frog Studios"><p>© 2026 Frog Studios. Where brands take a leap of faith.</p><div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></footer>
 
-  <div class="modal" id="modal" aria-hidden="true"><div class="modal-inner"><button class="close" id="close">×</button><div id="modalContent"></div></div></div>
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Portfolio preview"><div class="modal-inner"><button class="close" id="close" aria-label="Close preview">×</button><div id="modalContent"></div></div></div>
 
   <script>
-    const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
-    const menu=document.getElementById('menu'),links=document.querySelector('.nav-links');menu?.addEventListener('click',()=>{links.style.display=links.style.display==='flex'?'none':'flex';links.style.cssText='display:flex;position:fixed;inset:68px 0 auto 0;background:#080808;flex-direction:column;padding:30px;gap:24px;border-bottom:1px solid #24231f'});links?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<901)links.style.display='none'}));
-    const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');reveal.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>reveal.observe(e));
-    const mediaObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const v=e.target;if(v.dataset.src&&!v.src){v.src=v.dataset.src;v.load()}mediaObserver.unobserve(v)}}),{rootMargin:'250px'});document.querySelectorAll('video[data-src]').forEach(v=>mediaObserver.observe(v));
-    document.querySelectorAll('.work-card').forEach(card=>{const v=card.querySelector('video');card.addEventListener('mouseenter',()=>{if(v){v.play().catch(()=>{})}});card.addEventListener('mouseleave',()=>{if(v){v.pause();v.currentTime=0}})});
-    document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.work-card').forEach(c=>c.style.display=f==='all'||c.dataset.kind===f?'block':'none')}));
-    const modal=document.getElementById('modal'),modalContent=document.getElementById('modalContent');document.querySelectorAll('.work-card').forEach(card=>card.addEventListener('click',()=>{const src=card.dataset.src,title=card.dataset.title;if(card.dataset.media==='video'){modalContent.innerHTML='<video class="modal-media" controls autoplay playsinline src="'+src+'"></video>'}else{modalContent.innerHTML='<img class="modal-media" src="'+src+'" alt="'+title+'">'}modal.classList.add('open');modal.setAttribute('aria-hidden','false')}));function closeModal(){modal.classList.remove('open');modalContent.innerHTML='';modal.setAttribute('aria-hidden','true')}document.getElementById('close').onclick=closeModal;modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-    document.getElementById('leadForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget,status=document.getElementById('formStatus'),button=form.querySelector('button');button.disabled=true;button.textContent='Sending…';status.textContent='';const fd=new FormData(form);const data=Object.fromEntries(fd.entries());try{const base=window.__API_BASE__||(location.hostname==='localhost'?'':'https://frog-studios.onrender.com');const r=await fetch(base+'/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await r.json();if(!r.ok||!result.success)throw new Error(result.error||'Submission failed');status.textContent='Thanks — your brief is in. We’ll be in touch soon.';form.reset()}catch(err){status.textContent='Could not send right now. Email us at frogstudiozz@gmail.com.'}finally{button.disabled=false;button.textContent='Send the brief ↗'}});
+    const nav=document.getElementById('nav');
+    const menu=document.getElementById('menu');
+    const links=document.getElementById('navLinks');
+    const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+
+    function closeMenu(){
+      if(innerWidth<901){
+        links.classList.remove('mobile-open');
+        menu.setAttribute('aria-expanded','false');
+      }
+    }
+    menu?.addEventListener('click',()=>{
+      const open=!links.classList.contains('mobile-open');
+      links.classList.toggle('mobile-open',open);
+      menu.setAttribute('aria-expanded',String(open));
+    });
+    links?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+
+    const mobileMenuStyle=document.createElement('style');
+    mobileMenuStyle.textContent='@media(max-width:900px){.nav-links.mobile-open{display:flex;position:fixed;inset:68px 0 auto 0;background:#080808;flex-direction:column;padding:30px;gap:24px;border-bottom:1px solid #24231f;box-shadow:0 18px 40px rgba(0,0,0,.35)}}';
+    document.head.appendChild(mobileMenuStyle);
+
+    const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('show');revealObserver.unobserve(entry.target)}
+    }),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+    const cards=[...document.querySelectorAll('.work-card')];
+    const mediaObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      const video=entry.target;
+      if(entry.isIntersecting){
+        if(video.dataset.src && video.src!==video.dataset.src) video.src=video.dataset.src;
+        video.load();
+        video.play().catch(()=>{});
+      }else{
+        video.pause();
+      }
+    }),{rootMargin:'220px 0px',threshold:.08});
+    document.querySelectorAll('video[data-src]').forEach(video=>mediaObserver.observe(video));
+
+    cards.forEach(card=>{
+      const video=card.querySelector('video');
+      if(video){
+        card.addEventListener('mouseenter',()=>video.play().catch(()=>{}));
+        card.addEventListener('mouseleave',()=>{if(!card.matches(':hover'))video.pause()});
+      }
+      const open=()=>openModal(card);
+      card.addEventListener('click',open);
+      card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
+    });
+
+    document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      cards.forEach(card=>{
+        const show=filter==='all'||card.dataset.kind===filter;
+        card.hidden=!show;
+      });
+    }));
+
+    const modal=document.getElementById('modal');
+    const modalContent=document.getElementById('modalContent');
+    const closeButton=document.getElementById('close');
+    let lastFocus=null;
+
+    function openModal(card){
+      const src=card.dataset.src;
+      const title=card.dataset.title||'Portfolio item';
+      lastFocus=document.activeElement;
+      if(card.dataset.media==='video'){
+        modalContent.innerHTML='<video class="modal-media" controls autoplay playsinline src="'+src+'"></video>';
+      }else{
+        modalContent.innerHTML='<img class="modal-media" src="'+src+'" alt="'+title.replace(/"/g,'&quot;')+'">';
+      }
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      closeButton.focus();
+      document.body.style.overflow='hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      modalContent.innerHTML='';
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      lastFocus?.focus();
+    }
+    closeButton.addEventListener('click',closeModal);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
+
+    const leadForm=document.getElementById('leadForm');
+    leadForm.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const status=document.getElementById('formStatus');
+      const button=leadForm.querySelector('button');
+      button.disabled=true;
+      button.textContent='Sending…';
+      status.textContent='';
+      try{
+        const data=Object.fromEntries(new FormData(leadForm).entries());
+        const base=window.__API_BASE__||(location.hostname==='localhost'?'':'https://frog-studios.onrender.com');
+        const response=await fetch(base+'/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+        const result=await response.json();
+        if(!response.ok||!result.success) throw new Error(result.error||'Submission failed');
+        status.textContent='Thanks — your brief is in. We’ll be in touch soon.';
+        leadForm.reset();
+      }catch(error){
+        status.textContent='Could not send right now. Email us at frogstudiozz@gmail.com.';
+      }finally{
+        button.disabled=false;
+        button.textContent='Send the brief ↗';
+      }
+    });
+
+    if(prefersReduced){
+      document.querySelectorAll('video').forEach(video=>video.removeAttribute('autoplay'));
+    }
   </script>
 </body>
 </html>
