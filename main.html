@@ -1777,14 +1777,14 @@ footer {
 
     <div class="portfolio-video-grid reveal">
       <div class="portfolio-video-shell" data-tilt>
-        <video src="images/reveal.mp4" playsinline loop preload="metadata"></video>
+        <video src="images/reveal.mp4" poster="images/FINAL.png" autoplay muted loop playsinline preload="auto"></video>
         <div class="portfolio-video-overlay">
           <div class="portfolio-video-label">Our Work</div>
         </div>
       </div>
 
       <div class="portfolio-video-shell" data-tilt>
-        <video src="images/reveal2.mp4" playsinline loop preload="metadata"></video>
+        <video src="images/reveal2.mp4" poster="images/FINAL.png" autoplay muted loop playsinline preload="auto"></video>
         <div class="portfolio-video-overlay">
           <div class="portfolio-video-label">Our Work</div>
         </div>
@@ -1798,18 +1798,18 @@ footer {
 
           <div class="work-media-item"><img src="images/FINAL.png" alt="Work image 1"></div>
           <div class="work-media-item"><img src="images/FINAL__1.png" alt="Work image 2"></div>
-          <div class="work-media-item"><img src="images/WOI (26).png" alt="Work image 3"></div>
-          <div class="work-media-item"><img src="images/WOI (27).png" alt="Work image 4"></div>
-          <div class="work-media-item"><img src="images/WOI (28).png" alt="Work image 5"></div>
+          <div class="work-media-item"><img src="images/WOI%20(26).png" alt="Work image 3"></div>
+          <div class="work-media-item"><img src="images/WOI%20(27).png" alt="Work image 4"></div>
+          <div class="work-media-item"><img src="images/WOI%20(28).png" alt="Work image 5"></div>
           <div class="work-media-item"><img src="images/tal.jpeg" alt="Work image 6"></div>
           <div class="work-media-item"><img src="images/tal2.jpeg" alt="Work image 7"></div>
 
           <!-- duplicate set for seamless loop -->
           <div class="work-media-item"><img src="images/FINAL.png" alt="Work image 1"></div>
           <div class="work-media-item"><img src="images/FINAL__1.png" alt="Work image 2"></div>
-          <div class="work-media-item"><img src="images/WOI (26).png" alt="Work image 3"></div>
-          <div class="work-media-item"><img src="images/WOI (27).png" alt="Work image 4"></div>
-          <div class="work-media-item"><img src="images/WOI (28).png" alt="Work image 5"></div>
+          <div class="work-media-item"><img src="images/WOI%20(26).png" alt="Work image 3"></div>
+          <div class="work-media-item"><img src="images/WOI%20(27).png" alt="Work image 4"></div>
+          <div class="work-media-item"><img src="images/WOI%20(28).png" alt="Work image 5"></div>
           <div class="work-media-item"><img src="images/tal.jpeg" alt="Work image 6"></div>
           <div class="work-media-item"><img src="images/tal2.jpeg" alt="Work image 7"></div>
         </div>
@@ -2100,8 +2100,6 @@ document.querySelectorAll(".portfolio-video-shell").forEach((shell) => {
   });
 
   shell.addEventListener("mouseleave", () => {
-    video.pause();
-    video.currentTime = 0;
     video.muted = true;
   });
 });
