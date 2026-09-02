@@ -1,6 +1,9 @@
-# Serve Main.html as the default homepage
+# Frog Studios - optimized static homepage
+[build]
+  publish = "."
+
 [[redirects]]
-from = "/"
-to = "/Main.html"
-status = 200
-force = true
+  from = "/main.html"
+  to = "/index.html"
+  status = 301
+  force = true
