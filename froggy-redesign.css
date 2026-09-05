@@ -1,0 +1,20 @@
+/* Frog Studios visual refresh — orange / paper / black */
+:root{--f-orange:#ff5a1f;--f-orange-hi:#ff7a3d;--f-paper:#fbfaf7;--f-ink:#111;--f-muted:#686868;--f-line:#d9d5ce;--f-radius:22px}
+body{background:var(--f-paper)!important;color:var(--f-ink)!important}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:100;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+header{height:88px!important;background:rgba(251,250,247,.90)!important;backdrop-filter:blur(14px);border-bottom:1px solid rgba(17,17,17,.13)!important}
+.links a{font-weight:800!important}.links .cta{background:var(--f-ink)!important;border-radius:999px!important;transition:.25s!important}.links .cta:hover{background:var(--f-orange)!important;transform:translateY(-2px)}
+.hero{padding:22px 0 0!important;border:0!important}.hero>.container{width:min(1480px,calc(100% - 56px))!important}.hero>.container>.hero-top,.hero>.container>h1,.hero>.container>.hero-bottom{display:none!important}
+.hero:before{content:"";display:block;min-height:calc(100vh - 132px);border:1px solid var(--f-ink);border-radius:var(--f-radius);background:var(--f-orange);box-shadow:0 18px 40px rgba(17,17,17,.08)}
+.hero:after{content:"FROG STUDIOS  /  HYDERABAD, INDIA\A\A MAKE NOISE.\A NOT CLUTTER.\A\A We turn sharp ideas into brands, campaigns and digital experiences people actually remember.\A\A START A PROJECT  ↗\A\A 01 / POINT OF VIEW    02 / METHOD    03 / NOW";white-space:pre-wrap;position:absolute;left:max(28px,calc((100vw - 1480px)/2 + 28px));right:max(28px,calc((100vw - 1480px)/2 + 28px));top:170px;z-index:1;color:var(--f-ink);font-weight:900;font-size:clamp(20px,4vw,58px);line-height:.91;letter-spacing:-.065em;max-width:1220px}
+.marquee{background:var(--f-ink)!important;border:0!important}.marquee b{color:var(--f-orange)!important}
+.intro,.services,.about{background:transparent!important}.intro{padding-top:135px!important}
+.intro h2,.section-head h2,.services h2,.about-copy h2,.contact h2,.statement h2{letter-spacing:-.085em!important}.intro h2 em,.about-copy h2 em,.contact h2 em{font-family:Georgia,serif!important;font-weight:400!important}
+.media{border-radius:18px!important;background:#e7e3dc!important}.project-num{border:1px solid var(--f-ink);border-radius:999px!important;background:var(--f-paper)!important}.project-info{border-bottom:1px solid var(--f-ink)!important}.media video{transition:transform .7s cubic-bezier(.2,.65,.25,1)!important}.project:hover .media video{transform:scale(1.04)!important}
+.statement{background:var(--f-ink)!important;border-radius:28px!important;margin:0 28px!important}.statement h2 span{color:var(--f-orange)!important}
+.service{transition:padding .25s ease,background .25s ease!important}.service:hover{padding-left:8px!important;padding-right:8px!important;background:rgba(255,90,31,.045)}
+.orange-block{border-radius:22px!important;overflow:hidden}.contact{background:var(--f-orange)!important;border-radius:28px 28px 0 0!important}.form button{border-radius:999px!important;background:var(--f-ink)!important}.form button:hover{background:#292929!important}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:850px){.hero>.container{width:calc(100% - 32px)!important}.hero:before{min-height:650px}.hero:after{left:32px;right:32px;top:155px;font-size:clamp(24px,8vw,54px)}.statement{margin:0 14px!important}}
+@media(max-width:520px){.hero>.container{width:calc(100% - 24px)!important}.hero:after{left:24px;right:24px;top:145px;font-size:10vw}.statement{margin:0 8px!important}}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none}.media video{transition:none!important}}
