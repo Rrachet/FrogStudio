@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL || '';
 const EMAIL_USER = process.env.EMAIL_USER || 'frogstudiozz@gmail.com';
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || '';
-const EMAIL_TO = process.env.EMAIL_TO || EMAIL_USER;
+const EMAIL_TO = process.env.EMAIL_TO || 'amarnathmishra5200@gmail.com';
 
 app.use(cors());
 app.use(bodyParser.json());
