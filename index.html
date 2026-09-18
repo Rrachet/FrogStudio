@@ -61,7 +61,7 @@ document.querySelectorAll('.project').forEach(project=>{
 });
 
 const form=document.getElementById('contactForm');const status=document.getElementById('status');
-form.addEventListener('submit',async e=>{e.preventDefault();status.textContent='Sending…';const data=Object.fromEntries(new FormData(form));try{const r=await fetch('https://frog-studios.onrender.com/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok)throw new Error();form.reset();status.textContent='Thanks — Frog will be in touch.'}catch(err){status.textContent='The form is unavailable right now. Please email hello@frogstudios.in.'}});
+form.addEventListener('submit',async e=>{e.preventDefault();status.textContent='Sending…';const data=Object.fromEntries(new FormData(form));const payload={...data,service:data.project};delete payload.project;try{const r=await fetch('https://frog-studios.onrender.com/api/submit-form',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!r.ok)throw new Error();form.reset();status.textContent='Thanks — Frog will be in touch.'}catch(err){status.textContent='The form is unavailable right now. Please email hello@frogstudios.in.'}});
 </script>
 </body>
 </html>
