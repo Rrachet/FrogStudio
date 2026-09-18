@@ -16,6 +16,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.dirname(__filename)));
+// Explicitly mount the media directory so Vercel's Express builder traces and ships these assets.
+app.use('/images', express.static(path.join(__dirname, 'images'), {
+  maxAge: '1y',
+  immutable: true
+}));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
