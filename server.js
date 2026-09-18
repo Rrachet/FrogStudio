@@ -17,6 +17,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.dirname(__filename)));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 function isEmailConfigured() {
   return Boolean(EMAIL_USER && EMAIL_PASSWORD && EMAIL_PASSWORD !== 'your_app_password_here');
 }
