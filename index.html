@@ -145,7 +145,7 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}*{min-width:0}iframe,video
 <footer><div class="container footer"><a class="brand" href="#top"><img src="images/FINAL__1.png" alt="Frog Studios"></a><p>© 2026 Frog Studios. Made in Hyderabad.</p><div class="footer-links"><a href="#work">Work</a><a href="#about">Studio</a><a href="#contact">Contact</a></div></div></footer>
 
 <script>
-// Lightbox close controls — works for the X button and Escape key
+// Lightbox controls
 const lightbox = document.getElementById('lightbox');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxVideo = document.getElementById('lightboxVideo');
@@ -167,21 +167,29 @@ function closeLightbox(){
   }
 }
 
-lightboxClose?.addEventListener('click',e=>{
-  e.preventDefault();
-  e.stopPropagation();
-  closeLightbox();
-});
+// Use capture phase so Escape cannot be swallowed by the video/player.
+window.addEventListener('keydown',e=>{
+  if(e.key==='Escape' || e.key==='Esc'){
+    if(lightbox?.classList.contains('open')){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      closeLightbox();
+    }
+  }
+},true);
+
+// X button: delegate from the document as a second reliable path.
+document.addEventListener('click',e=>{
+  const close=e.target.closest?.('#lightboxClose');
+  if(close){
+    e.preventDefault();
+    e.stopPropagation();
+    closeLightbox();
+  }
+},true);
 
 lightbox?.addEventListener('click',e=>{
   if(e.target===lightbox) closeLightbox();
-});
-
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape' && lightbox?.classList.contains('open')){
-    e.preventDefault();
-    closeLightbox();
-  }
 });
 
 // Theme toggle
