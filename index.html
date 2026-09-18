@@ -147,48 +147,59 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}*{min-width:0}iframe,video
 <footer><div class="container footer"><a class="brand" href="#top"><img src="images/FINAL__1.png" alt="Frog Studios"></a><p>© 2026 Frog Studios. Made in Hyderabad.</p><div class="footer-links"><a href="#work">Work</a><a href="#about">Studio</a><a href="#contact">Contact</a></div></div></footer>
 
 <script>
-// Lightbox controls
-const lightbox = document.getElementById('lightbox');
-const lightboxClose = document.getElementById('lightboxClose');
-const lightboxVideo = document.getElementById('lightboxVideo');
-const lightboxImage = document.getElementById('lightboxImage');
+// Lightbox controls — initialize after the lightbox markup exists
+document.addEventListener('DOMContentLoaded',()=>{
+  const lightbox=document.getElementById('lightbox');
+  const closeBtn=document.getElementById('lightboxClose');
+  const video=document.getElementById('lightboxVideo');
+  const image=document.getElementById('lightboxImage');
 
-function closeLightbox(){
-  if(!lightbox) return;
-  lightbox.classList.remove('open');
-  lightbox.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
-  if(lightboxVideo){
-    lightboxVideo.pause();
-    lightboxVideo.removeAttribute('src');
-    lightboxVideo.load();
-    lightboxVideo.hidden=true;
-  }
-  if(lightboxImage){
-    lightboxImage.removeAttribute('src');
-    lightboxImage.hidden=true;
-  }
-}
+  const close=()=>{
+    if(!lightbox) return;
+    lightbox.classList.remove('open');
+    document.body.style.overflow='';
+    if(video){
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+      video.hidden=true;
+    }
+    if(image){
+      image.removeAttribute('src');
+      image.hidden=true;
+    }
+  };
 
-if(lightboxClose){
-  lightboxClose.onclick=function(e){
+  closeBtn?.addEventListener('click',e=>{
     e.preventDefault();
     e.stopPropagation();
-    closeLightbox();
-    return false;
-  };
-}
-window.onkeydown=function(e){
-  if((e.key==='Escape'||e.key==='Esc'||e.code==='Escape') && lightbox && lightbox.classList.contains('open')){
-    e.preventDefault();
-    closeLightbox();
-    return false;
-  }
-};
-if(lightbox){
-  lightbox.onclick=function(e){
-    if(e.target===lightbox) closeLightbox();
-  };
+    close();
+  });
+
+  lightbox?.addEventListener('click',e=>{
+    if(e.target===lightbox) close();
+  });
+
+  window.addEventListener('keydown',e=>{
+    if(e.key==='Escape' && lightbox?.classList.contains('open')){
+      e.preventDefault();
+      e.stopPropagation();
+      close();
+    }
+  },true);
+
+  video?.addEventListener('ended',close);
+});
+ 
+function closeLightboxSafely(){
+  const lb=document.getElementById('lightbox');
+  const vid=document.getElementById('lightboxVideo');
+  const img=document.getElementById('lightboxImage');
+  if(!lb) return;
+  lb.classList.remove('open');
+  document.body.style.overflow='';
+  if(vid){ vid.pause(); vid.onended=null; vid.removeAttribute('src'); vid.load(); vid.hidden=true; }
+  if(img){ img.removeAttribute('src'); img.hidden=true; }
 }
 
 // Theme toggle
@@ -264,6 +275,7 @@ function openVideoFullscreen(src){
   img.hidden=true; img.className='';
   vid.hidden=false; vid.className='lightbox-video-portrait';
   vid.src=src; vid.muted=false; vid.controls=true; vid.loop=false; vid.playsInline=true;
+  vid.onended=()=>closeLightboxSafely();
   lb.classList.add('open'); document.body.style.overflow='hidden';
   vid.play().catch(()=>{});
 }
