@@ -32,7 +32,9 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}*{min-width:0}iframe,video
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:30px;backdrop-filter:blur(4px)}.lightbox.open{display:flex}.lightbox img,.lightbox video{display:block;width:auto;height:auto;max-width:calc(100vw - 48px);max-height:calc(100vh - 48px);object-fit:contain;box-shadow:0 20px 80px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25)}.lightbox video{width:auto;height:auto;min-width:0}.lightbox-close{position:absolute;top:15px;right:25px;border:0;background:0;color:#fff;font-size:40px;cursor:pointer;transition:transform .3s ease}.lightbox-close:hover{transform:rotate(90deg)}
 </style>
 <style id="things-we-do-overrides">
-.things-we-do{padding-top:120px}
+.things-we-do{padding-top:120px;position:relative}
+.things-we-do:before{content:"";position:absolute;left:-150px;top:70px;width:300px;height:300px;background:url("images/FINAL__1.png") center/contain no-repeat;opacity:.11;pointer-events:none;z-index:0}
+.things-we-do>*{position:relative;z-index:1}
 .things-intro{display:grid;grid-template-columns:1fr 1.5fr;gap:40px;padding-bottom:80px}
 .things-intro .mono{grid-column:1/-1}
 .things-intro h2{font-size:clamp(64px,9vw,140px);line-height:.78;letter-spacing:-.09em}
@@ -154,6 +156,7 @@ const lightboxImage = document.getElementById('lightboxImage');
 function closeLightbox(){
   if(!lightbox) return;
   lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
   if(lightboxVideo){
     lightboxVideo.pause();
@@ -167,30 +170,26 @@ function closeLightbox(){
   }
 }
 
-// Use capture phase so Escape cannot be swallowed by the video/player.
-window.addEventListener('keydown',e=>{
-  if(e.key==='Escape' || e.key==='Esc'){
-    if(lightbox?.classList.contains('open')){
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      closeLightbox();
-    }
-  }
-},true);
-
-// X button: delegate from the document as a second reliable path.
-document.addEventListener('click',e=>{
-  const close=e.target.closest?.('#lightboxClose');
-  if(close){
+if(lightboxClose){
+  lightboxClose.onclick=function(e){
     e.preventDefault();
     e.stopPropagation();
     closeLightbox();
+    return false;
+  };
+}
+window.onkeydown=function(e){
+  if((e.key==='Escape'||e.key==='Esc'||e.code==='Escape') && lightbox && lightbox.classList.contains('open')){
+    e.preventDefault();
+    closeLightbox();
+    return false;
   }
-},true);
-
-lightbox?.addEventListener('click',e=>{
-  if(e.target===lightbox) closeLightbox();
-});
+};
+if(lightbox){
+  lightbox.onclick=function(e){
+    if(e.target===lightbox) closeLightbox();
+  };
+}
 
 // Theme toggle
 const themeToggle = document.getElementById('themeToggle');
