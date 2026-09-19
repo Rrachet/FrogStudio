@@ -342,6 +342,10 @@ form?.addEventListener('submit',async e=>{
   const reduce=matchMedia('(prefers-reduced-motion:reduce)');
   const STICK=84;
   let travel=0,pinStatic=0,pinned=false,ticking=false,active=-1;
+  const spacer=document.createElement('div');
+  spacer.setAttribute('aria-hidden','true');
+  spacer.style.cssText='flex:0 0 0px;align-self:stretch';
+  track.appendChild(spacer);
 
   function setActive(i){
     if(i===active) return;
@@ -367,12 +371,18 @@ form?.addEventListener('submit',async e=>{
     track.style.transform='';
     pinned=false; travel=0;
     track.style.paddingLeft=track.style.paddingRight='';
+    spacer.style.flexBasis='0px';
     if(!reduce.matches&&innerWidth>850){
       // pad so the first and last frames can each reach the centre,
       // otherwise they never become the nearest-to-centre step
       const cw=steps[0].getBoundingClientRect().width;
       const side=Math.max(0,(track.parentElement.clientWidth-cw)/2);
-      track.style.paddingLeft=track.style.paddingRight=side+'px';
+      // a flex row's padding-right is not counted in scrollWidth, so the
+      // last frame would finish flush against the right edge. A margin on
+      // the last item is counted, so the reel ends with frame 04 centred.
+      track.style.paddingLeft=side+'px';
+      const gap=parseFloat(getComputedStyle(track).columnGap)||0;
+      spacer.style.flexBasis=Math.max(0,side-gap)+'px';
       const t=track.scrollWidth-track.parentElement.clientWidth;
       if(t>0){
         travel=t;
@@ -389,17 +399,17 @@ form?.addEventListener('submit',async e=>{
         const chrome=head.offsetHeight+rail.offsetHeight+px(rail,'marginTop')
           +px(view,'paddingTop','paddingBottom')+px(track,'paddingTop','paddingBottom')+strips;
         const avail=Math.floor(pin.clientHeight-chrome);
-        if(avail<260){ sec.classList.remove('is-pinned'); sec.style.removeProperty('--step-h'); return; }
+        if(avail<260){ sec.classList.remove('is-pinned'); sec.style.removeProperty('--step-h'); spacer.style.flexBasis='0px'; return; }
         const stepH=Math.min(456,avail);
         sec.style.setProperty('--step-h',stepH+'px');
         // a short card has no clear band under the copy, so the numeral moves
         // up beside the label rather than sitting behind the paragraph
         sec.classList.toggle('is-compact',stepH<410);
         travel=track.scrollWidth-track.parentElement.clientWidth;
-        if(travel<=0){ sec.classList.remove('is-pinned'); sec.style.removeProperty('--step-h'); return; }
+        if(travel<=0){ sec.classList.remove('is-pinned'); sec.style.removeProperty('--step-h'); spacer.style.flexBasis='0px'; return; }
         sec.style.setProperty('--pin-height',(pin.offsetHeight+travel)+'px');
         pinned=true;
-      }else{ track.style.paddingLeft=track.style.paddingRight=''; }
+      }else{ track.style.paddingLeft=''; spacer.style.flexBasis='0px'; }
     }
     update();
   }
