@@ -13,7 +13,7 @@ function leadHtml(s) {
     <h2 style="color:#ff5a1f;border-bottom:2px solid #ff5a1f;padding-bottom:10px">New enquiry from the Frog Studios website</h2>
     <div style="margin:20px 0;line-height:1.8">
       ${row('Name', s.name)}${row('Company', s.company)}${row('Contact number', s.phone)}
-      ${row('Email', s.email)}${row('Service needed', s.service)}
+      ${row('Email', s.email)}${row('Service needed', s.service)}${row('Budget', s.budget)}
     </div>
     <div style="background:#f5f5f5;padding:15px;border-left:4px solid #ff5a1f;margin:20px 0">
       <h3 style="margin-top:0;color:#333">Message</h3>
@@ -35,7 +35,8 @@ module.exports = async (req, res) => {
     company: String(body.company || '').trim(),
     email: String(body.email || '').trim(),
     phone: String(body.phone || '').trim(),
-    service: String(body.service || '').trim(),
+    service: String(body.service || body.project || '').trim(),
+    budget: String(body.budget || '').trim(),
     message: String(body.message || '').trim(),
     timestamp: new Date().toISOString()
   };

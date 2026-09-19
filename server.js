@@ -153,7 +153,7 @@ async function sendLeadEmails(submission) {
   await transporter.sendMail({
     from: EMAIL_USER,
     to: EMAIL_TO,
-    subject: `New Contact Form Submission from ${submission.name}`,
+    subject: `Frog Studios Lead — ${submission.service} — ${submission.name}`,
     html: htmlContent,
     replyTo: submission.email
   });
@@ -200,10 +200,10 @@ app.post('/api/submit-form', async (req, res) => {
       message: String(message || '').trim()
     };
 
-    if (!GOOGLE_SHEET_URL && !transporter) {
-      return res.status(500).json({
+    if (!transporter) {
+      return res.status(503).json({
         success: false,
-        error: 'No form destination is configured. Set GOOGLE_SHEET_URL to save submissions.'
+        error: 'Email service is not configured on the form server.'
       });
     }
 
@@ -219,19 +219,25 @@ app.post('/api/submit-form', async (req, res) => {
     try {
       const emailResult = await sendLeadEmails(submission);
       emailSent = !emailResult.skipped;
+      if (!emailSent) {
+        throw new Error('Email transporter is unavailable');
+      }
     } catch (error) {
-      warnings.push(`Email notification failed: ${error.message}`);
       console.error('Email notification failed:', error);
+      return res.status(502).json({
+        success: false,
+        error: 'Your form could not be delivered to the Frog Studios team. Please try again or email hello@frogstudios.in.'
+      });
     }
 
-    console.log(`Form submitted by ${submission.name} (${submission.email}). Sheet saved: ${sheetSaved}. Email sent: ${emailSent}.`);
+    console.log(`Form submitted by ${submission.name} (${submission.email}). Sheet saved: ${sheetSaved}. Email sent: ${emailSent} to ${EMAIL_TO}.`);
 
     res.json({
       success: true,
       message: 'Your form has been submitted successfully.',
       sheetSaved,
       emailSent,
-      warnings
+      emailTo: EMAIL_TO
     });
   } catch (error) {
     console.error('Error processing form:', error);
