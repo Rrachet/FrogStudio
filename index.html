@@ -501,18 +501,29 @@ form?.addEventListener('submit',async e=>{
     chars.forEach((c,i)=>{ c.style.transitionDelay = (i*26)+'ms'; });
   }
 
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if (!e.isIntersecting) return;
-        e.target.classList.add('is-in');
-        io.unobserve(e.target);
-      });
-    }, { threshold:0.08, rootMargin:'0px 0px -5% 0px' });
-    revealTargets.forEach(el=>io.observe(el));
-  } else {
-    revealTargets.forEach(el=>el.classList.add('is-in'));
-  }
+  // Deterministic rather than observer-driven: IntersectionObserver can miss an
+  // element that crosses the viewport in under a frame, which on a fast flick
+  // leaves that section stuck at opacity 0 forever. A swept list cannot.
+  let pending = revealTargets.slice();
+  const sweep = () => {
+    if (!pending.length) return;
+    const h = innerHeight;
+    pending = pending.filter(el=>{
+      const r = el.getBoundingClientRect();
+      const reached = r.top < h * 0.94;   // in view, or already scrolled past
+      if (reached) el.classList.add('is-in');
+      return !reached;
+    });
+  };
+  let sweepQueued = false;
+  const queueSweep = () => {
+    if (sweepQueued || !pending.length) return;
+    sweepQueued = true;
+    requestAnimationFrame(()=>{ sweepQueued = false; sweep(); });
+  };
+  addEventListener('scroll', queueSweep, {passive:true});
+  addEventListener('resize', queueSweep);
+  sweep();
   // the headline is above the fold, so run it on load rather than on enter
   requestAnimationFrame(()=>chars.forEach(c=>c.classList.add('is-in')));
 
