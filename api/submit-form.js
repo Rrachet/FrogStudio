@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
   if (!submission.name || !submission.email || !submission.service) {
     return res.status(400).json({ success: false, error: 'Please fill in all required fields' });
   }
-  if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(submission.email)) {
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(submission.email)) {
     return res.status(400).json({ success: false, error: 'Please enter a valid email address' });
   }
 
