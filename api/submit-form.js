@@ -1,11 +1,13 @@
 const nodemailer = require('nodemailer');
 
-const EMAIL_USER = process.env.EMAIL_USER || 'frogstudiozz@gmail.com';
-const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || '';
-const EMAIL_TO = process.env.EMAIL_TO || 'amarnathmishra5200@gmail.com';
+// Gmail App Passwords are sometimes copied with spaces between groups.
+// Normalize credentials before passing them to Nodemailer.
+const EMAIL_USER = (process.env.EMAIL_USER || 'frogstudiozz@gmail.com').trim();
+const EMAIL_PASSWORD = (process.env.EMAIL_PASSWORD || '').replace(/\s+/g, '');
+const EMAIL_TO = (process.env.EMAIL_TO || 'amarnathmishra5200@gmail.com').trim();
 
-const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c =>
-  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const esc = v => String(v == null ? '' : v).replace(/[&<>\"']/g, c =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[c]));
 
 function leadHtml(s) {
   const row = (k, v) => `<p><strong>${k}:</strong> ${esc(v) || 'Not provided'}</p>`;
@@ -44,7 +46,7 @@ module.exports = async (req, res) => {
   if (!submission.name || !submission.email || !submission.service) {
     return res.status(400).json({ success: false, error: 'Please fill in all required fields' });
   }
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(submission.email)) {
+  if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(submission.email)) {
     return res.status(400).json({ success: false, error: 'Please enter a valid email address' });
   }
 
