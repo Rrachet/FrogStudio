@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon.png" type="image/png" sizes="512x512"><link rel="apple-touch-icon" href="/favicon.png">
 <style>
 :root{--orange:#ff9000;--orange-ink:#d97a00;--orange2:#ff6b32;--ink:#101010;--grey:#707070;--line:#dedbd5;--white:#fff;--black:#101010;--max:1480px;--bg:#fff;--text:#101010;--text-light:#707070;--border:#dedbd5;--card-bg:rgba(255,255,255,.78)}[data-theme="dark"]{--bg:#0a0a0a;--text:#f5f5f5;--text-light:#999;--border:#2a2a2a;--card-bg:rgba(20,20,20,.78);--orange-ink:#ff9000}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:88px}body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden;transition:background .3s ease,color .3s ease}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit;background-color:transparent}img,video{display:block;max-width:100%}.container{width:min(var(--max),calc(100% - 48px));margin:auto}.mono{font:11px/1.2 "Courier New",monospace;text-transform:uppercase;letter-spacing:.09em}.orange{color:var(--orange)}
-header{height:84px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;transition:border-color .3s ease,background .3s ease;backdrop-filter:blur(8px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:13px;line-height:.85;letter-spacing:-.04em;flex-shrink:0}.brand-logo{display:block;width:auto;height:44px;object-fit:contain}.brand-logo-dark{display:none}[data-theme="dark"] .brand-logo-light{display:none}[data-theme="dark"] .brand-logo-dark{display:block}.links{display:flex;align-items:center;gap:34px;flex:1;justify-content:center;position:relative}.links a{font-size:12px;font-weight:700;transition:color .3s ease}.links a:hover{color:var(--orange-ink)}.links .cta{background:var(--orange);color:#111;padding:13px 17px;border-radius:999px;transition:transform .3s ease,box-shadow .3s ease}.links .cta:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(255,144,0,.35)}.theme-toggle{background:0;border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all .3s ease;margin-left:auto;flex-shrink:0}.theme-toggle:hover{background:var(--border);color:var(--orange-ink)}.menu{display:none;border:0;background:none;font-size:25px;flex-shrink:0;margin-left:8px}
+header{height:84px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;transition:border-color .3s ease,background .3s ease;backdrop-filter:blur(8px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:13px;line-height:.85;letter-spacing:-.04em;flex-shrink:0}.brand-logo{display:block;width:auto;height:44px;object-fit:contain}.brand-logo-dark{display:none}[data-theme="dark"] .brand-logo-light{display:none}[data-theme="dark"] .brand-logo-dark{display:block}.links{display:flex;align-items:center;gap:34px;flex:1;justify-content:center;position:relative}.links a{font-size:12px;font-weight:700;transition:color .3s ease}.links a:hover{color:var(--orange-ink)}.links .cta{background:var(--orange);color:#111;padding:13px 17px;border-radius:999px;transition:transform .3s ease,box-shadow .3s ease}.links .cta:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(255,144,0,.35)}.jr{display:contents}@media(min-width:851px){.jr{--jr-gap:6px;--jr-h:34px;--jr-px:15px;display:inline-flex;align-items:center;gap:var(--jr-gap);padding:0 var(--jr-pad-x,14px)}.links a.jr-chip{position:relative;display:inline-flex;align-items:center;justify-content:center;height:var(--jr-h);padding:0 var(--jr-px);border:1px solid var(--border);border-radius:999px;background:var(--bg);transform-origin:50% 50%;white-space:nowrap;backface-visibility:hidden;transition:background-color .25s ease,color .25s ease,border-color .25s ease}.links a.jr-chip:hover{color:var(--orange-ink);border-color:var(--orange)}.links a.jr-chip[aria-current]{background:var(--text);color:var(--bg);border-color:var(--text)}.links a.jr-chip[aria-current]:hover{color:var(--bg);border-color:var(--text)}.links a.jr-chip:focus-visible{outline:2px solid var(--orange-ink);outline-offset:3px}}@media(prefers-reduced-motion:reduce){.links a.jr-chip{transition:none}}.theme-toggle{background:0;border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all .3s ease;margin-left:auto;flex-shrink:0}.theme-toggle:hover{background:var(--border);color:var(--orange-ink)}.menu{display:none;border:0;background:none;font-size:25px;flex-shrink:0;margin-left:8px}
 .hero{border-bottom:1px solid var(--border);min-height:calc(100svh - 84px);display:flex;align-items:stretch;animation:fadeInUp .8s ease-out}.hero>.container{display:flex;flex-direction:column;position:relative;overflow:hidden;width:min(var(--max),calc(100vw - 48px))}.hero>.container:before{content:"FROG STUDIOS";position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);font-size:min(calc(14.7vw - 7px),217px);font-weight:900;letter-spacing:-.09em;white-space:nowrap;color:rgba(16,16,16,.035);pointer-events:none}[data-theme="dark"] .hero>.container:before{color:rgba(245,245,245,.035)}.hero h1{position:relative;z-index:1;font-size:clamp(64px,12vw,170px);font-weight:900;line-height:.78;letter-spacing:-.095em;text-transform:uppercase;padding:clamp(38px,5vh,62px) 0 clamp(30px,4vh,48px);margin:auto 0;animation:fadeInUp .8s ease-out .2s backwards}.hero h1.is-flapped{letter-spacing:0;line-height:1;font-size:min(calc(8.88vw - 4.26px),131px)}.flap-vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}.flap-board{--fw:.86em;--fh:1.46em;--fgap:.05em;display:flex;flex-direction:column;gap:.085em;align-items:flex-start}.flap-row{display:flex;gap:var(--fgap)}.flap{position:relative;flex:0 0 auto;width:var(--fw);height:var(--fh);border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);perspective:560px;overflow:hidden}.flap[data-accent]{background:var(--orange);border-color:var(--orange);color:#111}.flap:after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;z-index:9;background:var(--border);pointer-events:none}.flap[data-accent]:after{background:rgba(17,17,17,.3)}.fh,.ff{position:absolute;left:0;width:100%;height:50%;overflow:hidden;background:inherit;backface-visibility:hidden}.fh-t,.ff-f{top:0}.fh-b,.ff-b{bottom:0}.fg{position:absolute;left:0;width:100%;height:200%;display:flex;align-items:center;justify-content:center;font:900 .75em/1 Arial,Helvetica,sans-serif}.fh-t .fg,.ff-f .fg{top:0}.fh-b .fg,.ff-b .fg{bottom:0}.ff{z-index:6;opacity:0;will-change:transform}.flap.is-flipping .ff{opacity:1}.ff-f{transform-origin:center bottom}.ff-b{transform-origin:center top;transform:rotateX(90deg)}@media(prefers-reduced-motion:reduce){.ff{display:none}}.hero h1 .orange-word{color:var(--orange-ink)}.hero-bottom{position:relative;z-index:1;display:grid;grid-template-columns:2fr 1fr 1fr;border-top:1px solid var(--border);flex:0 0 auto}.hero-bottom>div{padding:19px 20px 19px 0;border-right:1px solid var(--border)}.hero-bottom>div:not(:first-child){padding-left:20px}.hero-bottom>div:last-child{border-right:0}.hero-bottom strong{display:block;font-size:14px;margin-top:7px}.hero-bottom span:not(.mono){color:var(--text-light);font-size:13px}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes fadeInSection{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 .marquee{background:var(--bg);overflow:hidden;border-bottom:1px solid var(--border);-webkit-mask-image:linear-gradient(90deg,transparent,#000 clamp(28px,9vw,120px),#000 calc(100% - clamp(28px,9vw,120px)),transparent);mask-image:linear-gradient(90deg,transparent,#000 clamp(28px,9vw,120px),#000 calc(100% - clamp(28px,9vw,120px)),transparent)}.marquee-track{display:flex;align-items:center;width:max-content;white-space:nowrap;padding:19px 0;animation:scroll 48s linear infinite}.marquee:hover .marquee-track{animation-play-state:paused}.marquee span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.26em;margin:0 30px;color:var(--text-light)}.marquee b{flex:0 0 auto;width:3px;height:3px;border-radius:50%;background:var(--orange)}@keyframes scroll{to{transform:translateX(-50%)}}
 section{animation:fadeInSection .6s ease-out}
@@ -76,7 +76,7 @@ html,body{width:100%;max-width:100%;overflow-x:clip}*{min-width:0}iframe,video,i
 @media(max-width:520px){.things-we-do{padding-top:80px}.things-intro{padding-bottom:55px}.work-category{padding-bottom:65px}.website-project,.video-project,.static-project{grid-column:1}.category-head h3{font-size:54px}}
 </style></head>
 <body>
-<header><div class="container nav"><a class="brand" href="#top"><img class="brand-logo brand-logo-light" src="images/logo-header-light.png" alt="Frog Studios"><img class="brand-logo brand-logo-dark" src="images/logo-header-dark.png" alt="" aria-hidden="true"></a><nav class="links"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">Studio</a><a class="cta" href="#contact">Start a project ↗</a></nav><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu"><span class="mm-bars" aria-hidden="true"><i></i><i></i></span></button></div></header>
+<header><div class="container nav"><a class="brand" href="#top"><img class="brand-logo brand-logo-light" src="images/logo-header-light.png" alt="Frog Studios"><img class="brand-logo brand-logo-dark" src="images/logo-header-dark.png" alt="" aria-hidden="true"></a><nav class="links"><span class="jr"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">Studio</a></span><a class="cta" href="#contact">Start a project ↗</a></nav><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu"><span class="mm-bars" aria-hidden="true"><i></i><i></i></span></button></div></header>
 <div class="mm-scrim" aria-hidden="true"></div><div class="mm-layers" aria-hidden="true"><i></i><i></i></div><div class="mobile-menu" id="mobileMenu" hidden role="dialog" aria-modal="true" aria-label="Navigation"><nav class="mm-inner"><ul class="mm-list"><li class="mm-item"><a href="#work" data-n="01"><span>Work</span></a></li><li class="mm-item"><a href="#services" data-n="02"><span>Services</span></a></li><li class="mm-item"><a href="#about" data-n="03"><span>Studio</span></a></li><li class="mm-item"><a href="#contact" data-n="04"><span>Start a project ↗</span></a></li></ul><div class="mm-foot"><span class="mono">Frog Studios</span><a class="mono" href="mailto:frogstudiozz@gmail.com">frogstudiozz@gmail.com</a></div></nav></div>
 <main id="top">
 <section class="hero"><div class="container"><h1>Where your<br>brand <span class="orange-word">leaps.</span></h1><div class="hero-bottom"><div><strong>We build brands people notice.</strong></div><div><strong>Strategy → identity → execution.</strong></div><div><strong>Taking select 2026 projects.</strong></div></div></div></section>
@@ -358,6 +358,147 @@ form?.addEventListener('submit',async e=>{
     status.style.color='#8b0000';
   }
 });
+
+// --- jelly nav chips (laptop only) -------------------------------
+// React Bits' JellyRadio, written against the DOM. These are links, not
+// radio inputs, so the roles stay navigational -- no radiogroup, no arrow
+// stepping -- and only the physics is borrowed: the chip for the section
+// you are in swells, and its neighbours give way by the room it takes plus
+// a barge. Springs are integrated here rather than approximated with
+// easing, so the stiffness falloff and the wide-before-tall jelly split
+// behave as the component specifies.
+(function(){
+  const group = document.querySelector('.links .jr');
+  if (!group) return;
+  const chips = [...group.querySelectorAll('a')];
+  if (!chips.length) return;
+  chips.forEach(c => c.classList.add('jr-chip'));
+
+  const SWELL = .14, SHRINK = .04, BARGE = 4, JELLY = 1,
+        BOUNCE = .25, STAGGER = 22, STIFF = 560, MASS = .9;
+  const reduce = matchMedia('(prefers-reduced-motion:reduce)');
+  const wide   = matchMedia('(min-width:851px)');
+
+  const mk = () => ({ x:0, v:0, t:0, k:1, m:1, c:1, delay:0, run:false });
+  const S = chips.map(() => ({ x:mk(), sx:mk(), sy:mk() }));
+  S.forEach(s => { s.sx.x = s.sx.t = s.sy.x = s.sy.t = 1; });
+
+  const aim = (s, target, k, m, bounce, delay) => {
+    s.t = target; s.k = k; s.m = m;
+    s.c = 2 * Math.sqrt(k * m) * (1 - bounce);
+    s.delay = delay; s.run = true;
+  };
+  const step = (s, dt) => {
+    if (!s.run) return false;
+    if (s.delay > 0) { s.delay -= dt; if (s.delay > 0) return true; dt = -s.delay; s.delay = 0; }
+    // sub-step so a stiff spring stays stable on a long frame
+    const n = Math.max(1, Math.ceil(dt / 0.004)), h = dt / n;
+    for (let i = 0; i < n; i++) {
+      s.v += ((-s.k * (s.x - s.t) - s.c * s.v) / s.m) * h;
+      s.x += s.v * h;
+    }
+    if (Math.abs(s.x - s.t) < 0.004 && Math.abs(s.v) < 0.05) { s.x = s.t; s.v = 0; s.run = false; return false; }
+    return true;
+  };
+  const paint = i => {
+    const s = S[i];
+    chips[i].style.transform =
+      'translateX(' + s.x.x.toFixed(2) + 'px) scale(' + s.sx.x.toFixed(4) + ',' + s.sy.x.toFixed(4) + ')';
+  };
+
+  let raf = null, last = 0;
+  const frame = now => {
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    let more = false;
+    for (let i = 0; i < chips.length; i++) {
+      const s = S[i];
+      const a = step(s.x, dt), b = step(s.sx, dt), c = step(s.sy, dt);
+      if (a || b || c) more = true;
+      paint(i);
+    }
+    raf = more ? requestAnimationFrame(frame) : null;
+  };
+  const start = () => { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } };
+
+  let widths = [], at = -1;
+  const measure = () => {
+    widths = chips.map(c => c.offsetWidth);
+    const maxW = Math.max(0, ...widths);
+    group.style.setProperty('--jr-pad-x', (Math.ceil(maxW * SWELL * 1.3 / 2 + BARGE) + 2) + 'px');
+  };
+
+  function apply(sel, instant){
+    const push = sel < 0 ? 0 : (widths[sel] || 0) * SWELL / 2 + BARGE;
+    chips.forEach((chip, i) => {
+      const none = sel < 0;
+      const on   = i === sel;
+      const far  = none ? 0 : Math.abs(i - sel);
+      const x    = none ? 0 : Math.sign(i - sel) * push;
+      const s    = none ? 1 : (on ? 1 + SWELL : 1 - SHRINK);
+      const sp   = S[i];
+      if (instant || reduce.matches) {
+        sp.x.x = sp.x.t = x; sp.sx.x = sp.sx.t = s; sp.sy.x = sp.sy.t = s;
+        sp.x.v = sp.sx.v = sp.sy.v = 0;
+        sp.x.run = sp.sx.run = sp.sy.run = false;
+        paint(i);
+        return;
+      }
+      const k = STIFF * (1 - .12 * Math.min(far, 3));
+      const inFlight = sp.x.run || sp.sx.run || sp.sy.run;
+      const delay = inFlight ? 0 : far * STAGGER / 1000;
+      aim(sp.x,  x, k, MASS, BOUNCE, delay);
+      aim(sp.sx, s, k * (1 + .24 * JELLY), MASS - .1 * JELLY, Math.min(.85, BOUNCE + .3 * JELLY), delay);
+      aim(sp.sy, s, k * (1 - .14 * JELLY), MASS + .05 * JELLY, BOUNCE, delay + .05 * JELLY);
+      start();
+    });
+  }
+
+  const select = (i, instant) => {
+    if (i === at) return;
+    at = i;
+    chips.forEach((c, k) => k === i ? c.setAttribute('aria-current','page') : c.removeAttribute('aria-current'));
+    apply(i, instant);
+  };
+
+  const targets = chips.map(a => document.querySelector(a.getAttribute('href')));
+  const contact = document.getElementById('contact');
+  function spy(){
+    if (!wide.matches) return;
+    const y = scrollY + 84 + Math.min(120, innerHeight * .2);
+    // past the last chip's section the group goes quiet: the contact CTA
+    // beside it is not part of this group, so nothing should read as current
+    if (contact && contact.offsetTop <= y) { select(-1); return; }
+    let idx = -1;
+    targets.forEach((t, i) => { if (t && t.offsetTop <= y) idx = i; });
+    select(idx);
+  }
+
+  let queued = false;
+  const onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; spy(); }); } };
+
+  function reset(){
+    chips.forEach((c, i) => {
+      c.style.transform = '';
+      S[i].x.run = S[i].sx.run = S[i].sy.run = false;
+      S[i].x.x = S[i].x.t = 0; S[i].sx.x = S[i].sx.t = 1; S[i].sy.x = S[i].sy.t = 1;
+    });
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+  }
+
+  function sync(){
+    if (!wide.matches) { reset(); at = -1; chips.forEach(c => c.removeAttribute('aria-current')); return; }
+    measure();
+    apply(at, true);
+    spy();
+  }
+
+  chips.forEach((c, i) => c.addEventListener('click', () => { if (wide.matches) select(i, false); }));
+  addEventListener('scroll', onScroll, { passive:true });
+  addEventListener('resize', () => { clearTimeout(sync._t); sync._t = setTimeout(sync, 140); });
+  wide.addEventListener && wide.addEventListener('change', sync);
+  document.fonts && document.fonts.ready ? document.fonts.ready.then(sync) : sync();
+  sync();
+})();
 
 // Horizontal process: vertical scroll drives the reel sideways, and the
 // frame nearest the viewport centre lights up.
