@@ -622,6 +622,26 @@ form?.addEventListener('submit',async e=>{
 
     let parts = [], w = 0, h = 0, raf = null, running = false, last = null;
     let gatherAt = 0, gathering = false;
+    let inkCol = '#101010', accCol = '#d97a00', inkRGB = [16,16,16], accRGB = [217,122,0];
+
+    // The heading's own colour is set to transparent the moment the
+    // particles take over, so reading it back on a rebuild samples nothing.
+    // Read the theme's variables instead: they stay live, and they follow a
+    // theme switch, so the field can be recoloured without rebuilding it.
+    const swatch = document.createElement('canvas').getContext('2d');
+    const toRGB = col => {
+      swatch.fillStyle = '#000';
+      swatch.fillStyle = col;
+      const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(swatch.fillStyle);
+      return m ? [parseInt(m[1],16), parseInt(m[2],16), parseInt(m[3],16)] : null;
+    };
+    const readCols = () => {
+      const cs = getComputedStyle(heading);
+      inkCol = cs.getPropertyValue('--text').trim() || cs.color;
+      accCol = cs.getPropertyValue('--orange-ink').trim() || inkCol;
+      inkRGB = toRGB(inkCol) || [16,16,16];
+      accRGB = toRGB(accCol) || [217,122,0];
+    };
     const ptr = { on:false, x:0, y:0, sx:0, sy:0 };
     const ease = t => 1 - Math.pow(1 - t, 3);
 
@@ -651,10 +671,10 @@ form?.addEventListener('submit',async e=>{
       const padTop = parseFloat(cs.paddingTop) || 0;
       const lh = size * parseFloat(cs.lineHeight) / size || size * 0.78;
       const lineH = isNaN(lh) || !lh ? size * 0.78 : parseFloat(cs.lineHeight);
-      const ink = cs.color, accent = getComputedStyle(heading.querySelector('.orange-word')).color;
+      readCols();
       const lines = [
-        [['Where your', ink]],
-        [['brand ', ink], ['leaps.', accent]]
+        [['Where your', inkCol]],
+        [['brand ', inkCol], ['leaps.', accCol]]
       ];
       lines.forEach((line, li) => {
         let x = 0;
@@ -683,10 +703,16 @@ form?.addEventListener('submit',async e=>{
         const seed = ((i * 9301 + 49297) % 233280) / 233280;
         const depth = 0.45 + (((i * 233 + 97) % 1000) / 1000) * 0.9;
         const ang = seed * Math.PI * 2, dist = 190 * (0.35 + depth * 0.75);
+        // getImageData un-premultiplies the alpha, so an anti-aliased pixel
+        // lands a shade or two off the colour it was painted with. Bucket
+        // each particle by whichever of the two it is nearer, and colour it
+        // from the live variable at draw time rather than from the sample.
+        const dI = Math.abs(t[2]-inkRGB[0]) + Math.abs(t[3]-inkRGB[1]) + Math.abs(t[4]-inkRGB[2]);
+        const dA = Math.abs(t[2]-accRGB[0]) + Math.abs(t[3]-accRGB[1]) + Math.abs(t[4]-accRGB[2]);
         return { tx:t[0], ty:t[1],
                  x:t[0] + Math.cos(ang)*dist, y:t[1] + Math.sin(ang)*dist,
                  sx:t[0] + Math.cos(ang)*dist, sy:t[1] + Math.sin(ang)*dist,
-                 c:'rgb('+t[2]+','+t[3]+','+t[4]+')', seed, depth, delay:seed*420 };
+                 k:dA < dI ? 1 : 0, seed, depth, delay:seed*420 };
       });
       parts.forEach(p => { p.sx = p.x; p.sy = p.y; });
       gatherAt = performance.now(); gathering = true;
@@ -725,7 +751,7 @@ form?.addEventListener('submit',async e=>{
         }
         p.x += (bx - p.x) * 0.22; p.y += (by - p.y) * 0.22;
         ctx.globalAlpha = 0.35 + prog * 0.65;
-        ctx.fillStyle = p.c;
+        ctx.fillStyle = p.k ? accCol : inkCol;
         ctx.fillRect(p.x - 1.3, p.y - 1.3, 2.6, 2.6);
       }
       ctx.globalAlpha = 1;
@@ -740,6 +766,11 @@ form?.addEventListener('submit',async e=>{
       new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop()), {rootMargin:'80px'}).observe(section);
     } else start();
     addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+    // Follow the theme. Only the ink changes, never the glyph geometry, so
+    // re-reading the two variables is enough — no rebuild, no re-gather.
+    new MutationObserver(readCols)
+      .observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
 
     section.addEventListener('pointermove', ev => {
       if (ev.pointerType && ev.pointerType !== 'mouse') return;
